@@ -1,0 +1,224 @@
+{
+  "info": {
+    "name": "Flask user app",
+    "description": "Requests that test the Lab 5 user API: list users, get one user, add, update, and delete.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get all users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/api/users",
+        "description": "Read every row in the users table."
+      },
+      "response": [
+        {
+          "name": "All users",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/api/users"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n  {\n    \"user_id\": 1,\n    \"name\": \"John Doe\",\n    \"email\": \"johndoe@gmail.com\",\n    \"phone\": \"067765434567\",\n    \"address\": \"John Doe Street, Innsbruck\",\n    \"country\": \"Austria\"\n  }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Get user by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/api/users/1",
+        "description": "Read one user. The 1 in the path is the user_id."
+      },
+      "response": [
+        {
+          "name": "User 1",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/api/users/1"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"user_id\": 1,\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@gmail.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\"\n}"
+        },
+        {
+          "name": "Missing user",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/api/users/99"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{}"
+        }
+      ]
+    },
+    {
+      "name": "Add user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@gmail.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{base_url}}/api/users/add",
+        "description": "Create a user. Do not send user_id; SQLite assigns it."
+      },
+      "response": [
+        {
+          "name": "User created",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@gmail.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\"\n}"
+            },
+            "url": "{{base_url}}/api/users/add"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"user_id\": 1,\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@gmail.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update user",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"user_id\": 1,\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@gmail.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"Maria-Theresien-Strasse, Innsbruck\",\n  \"country\": \"Austria\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{base_url}}/api/users/update",
+        "description": "Update a user. user_id in the JSON body chooses which row changes."
+      },
+      "response": [
+        {
+          "name": "User updated",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": 1,\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@gmail.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"Maria-Theresien-Strasse, Innsbruck\",\n  \"country\": \"Austria\"\n}"
+            },
+            "url": "{{base_url}}/api/users/update"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"user_id\": 1,\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@gmail.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"Maria-Theresien-Strasse, Innsbruck\",\n  \"country\": \"Austria\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete user",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{base_url}}/api/users/delete/2",
+        "description": "Delete a user. The number in the path is the user_id."
+      },
+      "response": [
+        {
+          "name": "User deleted",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{base_url}}/api/users/delete/2"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"status\": \"User deleted successfully\"\n}"
+        }
+      ]
+    }
+  ]
+}
