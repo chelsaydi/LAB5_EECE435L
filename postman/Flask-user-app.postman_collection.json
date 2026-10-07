@@ -1,8 +1,11 @@
 {
   "info": {
+    "_postman_id": "1bd79e10-9282-4819-82ae-db0e76a04ae5",
     "name": "Flask user app",
     "description": "Requests that test the Lab 5 user API: list users, get one user, add, update, and delete.",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58779060",
+    "_collection_link": "https://go.postman.co/collection/58779060-1bd79e10-9282-4819-82ae-db0e76a04ae5?source=collection_link"
   },
   "item": [
     {
@@ -10,7 +13,16 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": "{{base_url}}/api/users",
+        "url": {
+          "raw": "{{base_url}}/api/users",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        },
         "description": "Read every row in the users table."
       },
       "response": [
@@ -19,7 +31,16 @@
           "originalRequest": {
             "method": "GET",
             "header": [],
-            "url": "{{base_url}}/api/users"
+            "url": {
+              "raw": "{{base_url}}/api/users",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ]
+            }
           },
           "status": "OK",
           "code": 200,
@@ -32,6 +53,54 @@
           ],
           "cookie": [],
           "body": "[\n  {\n    \"user_id\": 1,\n    \"name\": \"John Doe\",\n    \"email\": \"johndoe@gmail.com\",\n    \"phone\": \"067765434567\",\n    \"address\": \"John Doe Street, Innsbruck\",\n    \"country\": \"Austria\"\n  }\n]"
+        },
+        {
+          "name": "Get all users",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/users",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "server",
+              "value": "Werkzeug/3.1.9 Python/3.14.6"
+            },
+            {
+              "key": "date",
+              "value": "Wed, 07 Oct 2026 07:28:37 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "295"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n  {\n    \"address\": \"Maria-Theresien-Strasse, Innsbruck\",\n    \"country\": \"Austria\",\n    \"email\": \"john.doe@gmail.com\",\n    \"name\": \"John Doe\",\n    \"phone\": \"067765434567\",\n    \"user_id\": 1\n  },\n  {\n    \"address\": \"John Doe Street, Innsbruck\",\n    \"country\": \"Austria\",\n    \"email\": \"johndoe@gmail.com\",\n    \"name\": \"John Doe\",\n    \"phone\": \"067765434567\",\n    \"user_id\": 2\n  }\n]"
         }
       ]
     },
@@ -40,7 +109,17 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": "{{base_url}}/api/users/1",
+        "url": {
+          "raw": "{{base_url}}/api/users/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "1"
+          ]
+        },
         "description": "Read one user. The 1 in the path is the user_id."
       },
       "response": [
@@ -49,7 +128,17 @@
           "originalRequest": {
             "method": "GET",
             "header": [],
-            "url": "{{base_url}}/api/users/1"
+            "url": {
+              "raw": "{{base_url}}/api/users/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "1"
+              ]
+            }
           },
           "status": "OK",
           "code": 200,
@@ -68,7 +157,17 @@
           "originalRequest": {
             "method": "GET",
             "header": [],
-            "url": "{{base_url}}/api/users/99"
+            "url": {
+              "raw": "{{base_url}}/api/users/99",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "99"
+              ]
+            }
           },
           "status": "OK",
           "code": 200,
@@ -81,6 +180,55 @@
           ],
           "cookie": [],
           "body": "{}"
+        },
+        {
+          "name": "Get user by id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/users/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "server",
+              "value": "Werkzeug/3.1.9 Python/3.14.6"
+            },
+            {
+              "key": "date",
+              "value": "Wed, 07 Oct 2026 07:28:56 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "151"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"address\": \"Maria-Theresien-Strasse, Innsbruck\",\n  \"country\": \"Austria\",\n  \"email\": \"john.doe@gmail.com\",\n  \"name\": \"John Doe\",\n  \"phone\": \"067765434567\",\n  \"user_id\": 1\n}"
         }
       ]
     },
@@ -103,7 +251,17 @@
             }
           }
         },
-        "url": "{{base_url}}/api/users/add",
+        "url": {
+          "raw": "{{base_url}}/api/users/add",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "add"
+          ]
+        },
         "description": "Create a user. Do not send user_id; SQLite assigns it."
       },
       "response": [
@@ -121,7 +279,17 @@
               "mode": "raw",
               "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@gmail.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\"\n}"
             },
-            "url": "{{base_url}}/api/users/add"
+            "url": {
+              "raw": "{{base_url}}/api/users/add",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "add"
+              ]
+            }
           },
           "status": "OK",
           "code": 200,
@@ -134,6 +302,69 @@
           ],
           "cookie": [],
           "body": "{\n  \"user_id\": 1,\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@gmail.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\"\n}"
+        },
+        {
+          "name": "Add user",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@gmail.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/add",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "add"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "server",
+              "value": "Werkzeug/3.1.9 Python/3.14.6"
+            },
+            {
+              "key": "date",
+              "value": "Wed, 07 Oct 2026 07:22:07 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "142"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\",\n  \"email\": \"johndoe@gmail.com\",\n  \"name\": \"John Doe\",\n  \"phone\": \"067765434567\",\n  \"user_id\": 2\n}"
         }
       ]
     },
@@ -156,7 +387,17 @@
             }
           }
         },
-        "url": "{{base_url}}/api/users/update",
+        "url": {
+          "raw": "{{base_url}}/api/users/update",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "update"
+          ]
+        },
         "description": "Update a user. user_id in the JSON body chooses which row changes."
       },
       "response": [
@@ -174,7 +415,17 @@
               "mode": "raw",
               "raw": "{\n  \"user_id\": 1,\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@gmail.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"Maria-Theresien-Strasse, Innsbruck\",\n  \"country\": \"Austria\"\n}"
             },
-            "url": "{{base_url}}/api/users/update"
+            "url": {
+              "raw": "{{base_url}}/api/users/update",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "update"
+              ]
+            }
           },
           "status": "OK",
           "code": 200,
@@ -187,6 +438,69 @@
           ],
           "cookie": [],
           "body": "{\n  \"user_id\": 1,\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@gmail.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"Maria-Theresien-Strasse, Innsbruck\",\n  \"country\": \"Austria\"\n}"
+        },
+        {
+          "name": "Update user",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": 1,\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@gmail.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"Maria-Theresien-Strasse, Innsbruck\",\n  \"country\": \"Austria\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/update",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "update"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "server",
+              "value": "Werkzeug/3.1.9 Python/3.14.6"
+            },
+            {
+              "key": "date",
+              "value": "Wed, 07 Oct 2026 07:29:07 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "151"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"address\": \"Maria-Theresien-Strasse, Innsbruck\",\n  \"country\": \"Austria\",\n  \"email\": \"john.doe@gmail.com\",\n  \"name\": \"John Doe\",\n  \"phone\": \"067765434567\",\n  \"user_id\": 1\n}"
         }
       ]
     },
@@ -195,7 +509,18 @@
       "request": {
         "method": "DELETE",
         "header": [],
-        "url": "{{base_url}}/api/users/delete/2",
+        "url": {
+          "raw": "{{base_url}}/api/users/delete/2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "delete",
+            "2"
+          ]
+        },
         "description": "Delete a user. The number in the path is the user_id."
       },
       "response": [
@@ -204,7 +529,18 @@
           "originalRequest": {
             "method": "DELETE",
             "header": [],
-            "url": "{{base_url}}/api/users/delete/2"
+            "url": {
+              "raw": "{{base_url}}/api/users/delete/2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "delete",
+                "2"
+              ]
+            }
           },
           "status": "OK",
           "code": 200,
@@ -213,6 +549,56 @@
             {
               "key": "Content-Type",
               "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"status\": \"User deleted successfully\"\n}"
+        },
+        {
+          "name": "Delete user",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/users/delete/2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "delete",
+                "2"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "server",
+              "value": "Werkzeug/3.1.9 Python/3.14.6"
+            },
+            {
+              "key": "date",
+              "value": "Wed, 07 Oct 2026 07:29:15 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "39"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "connection",
+              "value": "close"
             }
           ],
           "cookie": [],
